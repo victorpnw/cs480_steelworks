@@ -29,9 +29,6 @@ CREATE TABLE inspection_records (
     CONSTRAINT fk_defect 
         FOREIGN KEY (defect_id) REFERENCES defects(id) 
         ON DELETE CASCADE,
-        
-    -- Business logic uniqueness constraint
-    CONSTRAINT unique_inspection_event UNIQUE (lot_id, defect_id, inspection_date)
 );
 
 -- Indexes for performance

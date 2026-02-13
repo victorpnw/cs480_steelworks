@@ -28,7 +28,7 @@ CREATE TABLE inspection_records (
         ON DELETE CASCADE,
     CONSTRAINT fk_defect 
         FOREIGN KEY (defect_id) REFERENCES defects(id) 
-        ON DELETE CASCADE,
+        ON DELETE CASCADE
 );
 
 -- Indexes for performance

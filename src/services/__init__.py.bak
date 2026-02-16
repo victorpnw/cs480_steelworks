@@ -1,0 +1,9 @@
+"""
+Services Module
+
+Exports the service classes for use throughout the application.
+"""
+
+from .import RecurringDefectClassificationService
+
+__all__ = ["RecurringDefectClassificationService"]

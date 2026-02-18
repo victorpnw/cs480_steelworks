@@ -1,0 +1,46 @@
+[[package]]
+name = "pytest"
+version = "7.4.0"
+description = "pytest: simple powerful testing with Python"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "pytest-cov"
+version = "4.1.0"
+description = "Pytest plugin for measuring code coverage with coverage.py"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "black"
+version = "23.7.0"
+description = "The uncompromising code formatter."
+category = "dev"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
+name = "flake8"
+version = "6.0.0"
+description = "the modular source code checker"
+category = "dev"
+optional = false
+python-versions = ">=3.8.1"
+
+[[package]]
+name = "mypy"
+version = "1.4.1"
+description = "Optional static typing for Python"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[metadata]
+python-versions = "^3.9"
+lock-version = "2.0"
+content-hash = "abc123def456"
+
+[metadata.files]

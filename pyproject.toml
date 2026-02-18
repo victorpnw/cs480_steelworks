@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "cs480-steelworks"
+version = "0.1.0"
+description = "Steelworks quality engineering platform - recurring defects analysis"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "recurring_defects", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.0"
+pytest-cov = "^4.0"
+black = "^23.0"
+flake8 = "^6.0"
+mypy = "^1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

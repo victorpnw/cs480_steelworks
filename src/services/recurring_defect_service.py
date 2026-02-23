@@ -156,7 +156,7 @@ class RecurringDefectService:
             A tuple of (weekly_rows, inspection_details).
         """
         # TODO: implement
-        pass
+        return ([], [])
 
     # ------------------------------------------------------------------
     # AC8 — Identify missing data periods
@@ -179,4 +179,4 @@ class RecurringDefectService:
             empty list if data is complete.
         """
         # TODO: implement
-        pass
+        return []

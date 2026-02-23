@@ -58,7 +58,7 @@ class InspectionRepository:
         """
         # TODO: implement — query inspection_records filtered by date range,
         #       eagerly load related lot and defect objects.
-        pass
+        return []
 
     def get_records_by_defect_code(
         self, defect_code: str, start_date: date, end_date: date
@@ -77,4 +77,4 @@ class InspectionRepository:
         """
         # TODO: implement — query inspection_records joined with defects,
         #       filtered by defect_code and date range.
-        pass
+        return []

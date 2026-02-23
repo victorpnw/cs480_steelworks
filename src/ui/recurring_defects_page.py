@@ -23,9 +23,13 @@ Acceptance Criteria covered here:
     AC9 — Default sorting (handled by the service, displayed here)
 """
 
+from typing import Any
+
+from src.schemas import InspectionDetail, MissingPeriod, WeeklyBreakdownRow
 
 
-def render_date_range_selector():
+
+def render_date_range_selector() -> tuple[Any, Any]:
     """Display start-date and end-date inputs and return the selected range.
 
     The user picks a date range that scopes all queries on this page.
@@ -34,20 +38,20 @@ def render_date_range_selector():
         A tuple of (start_date, end_date) as ``datetime.date`` objects.
     """
     # TODO: implement — use st.date_input for start and end dates
-    pass
+    return (None, None)
 
 
-def render_recurring_filter():
+def render_recurring_filter() -> bool:
     """Display a checkbox/toggle to filter the table to Recurring-only (AC6).
 
     Returns:
         ``True`` if the user wants to see only Recurring defects.
     """
     # TODO: implement — use st.checkbox or st.toggle
-    pass
+    return False
 
 
-def render_defect_summary_table(rows):
+def render_defect_summary_table(rows: list[Any]) -> str | None:
     """Render the Recurring Defects summary table (AC5, AC9).
 
     Each row shows: Defect Code, Status (with a visual badge for Recurring
@@ -61,10 +65,12 @@ def render_defect_summary_table(rows):
         drill-down, or ``None``.
     """
     # TODO: implement — use st.dataframe or st.table, highlight Recurring rows
-    pass
+    return None
 
 
-def render_defect_detail(defect_code, weekly_rows, inspection_details):
+def render_defect_detail(
+    defect_code: str, weekly_rows: list[WeeklyBreakdownRow], inspection_details: list[InspectionDetail]
+) -> None:
     """Render the drill-down detail view for a single defect code (AC7).
 
     Shows:
@@ -80,7 +86,7 @@ def render_defect_detail(defect_code, weekly_rows, inspection_details):
     pass
 
 
-def render_insufficient_data_message(missing_periods):
+def render_insufficient_data_message(missing_periods: list[MissingPeriod]) -> None:
     """Show which time periods are incomplete and why (AC8).
 
     Displayed when a defect has Status = "Insufficient data".
@@ -92,7 +98,7 @@ def render_insufficient_data_message(missing_periods):
     pass
 
 
-def main():
+def main() -> None:
     """Entry point — assembles all widgets into the full page.
 
     Flow:

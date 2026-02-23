@@ -17,10 +17,11 @@ Usage:
         results = session.execute(...)
 """
 
-from sqlalchemy.orm import Session
+from sqlalchemy import Engine, create_engine
+from sqlalchemy.orm import Session, sessionmaker
 
 
-def get_engine(database_url: str):
+def get_engine(database_url: str) -> Engine:
     """Create and return a SQLAlchemy engine.
 
     Args:
@@ -31,7 +32,8 @@ def get_engine(database_url: str):
         A SQLAlchemy ``Engine`` instance.
     """
     # TODO: implement — create engine from database_url
-    pass
+    engine = create_engine(database_url)
+    return engine
 
 
 def get_session(database_url: str) -> Session:
@@ -47,4 +49,6 @@ def get_session(database_url: str) -> Session:
         A SQLAlchemy ``Session`` instance.
     """
     # TODO: implement — build a sessionmaker from the engine, return a session
-    pass
+    engine = get_engine(database_url)
+    SessionLocal = sessionmaker(bind=engine)
+    return SessionLocal()

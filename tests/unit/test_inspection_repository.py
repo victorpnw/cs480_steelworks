@@ -34,6 +34,7 @@ from src.repositories.inspection_repository import InspectionRepository
 # Fixtures
 # ---------------------------------------------------------------------------
 
+
 @pytest.fixture
 def session():
     """Create a fresh in-memory SQLite database and return a session.
@@ -83,6 +84,7 @@ def repository(seeded_session):
 # Tests — get_records_by_date_range
 # ---------------------------------------------------------------------------
 
+
 class TestGetRecordsByDateRange:
     """Tests for ``InspectionRepository.get_records_by_date_range``."""
 
@@ -111,6 +113,7 @@ class TestGetRecordsByDateRange:
 # ---------------------------------------------------------------------------
 # Tests — get_records_by_defect_code
 # ---------------------------------------------------------------------------
+
 
 class TestGetRecordsByDefectCode:
     """Tests for ``InspectionRepository.get_records_by_defect_code``."""

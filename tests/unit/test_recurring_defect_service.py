@@ -102,7 +102,7 @@ def _make_record(
     return record
 
 
-# ============================= AC1 =========================================
+# ============================= AC1 =======================================
 class TestAC1RecurringClassification:
     """AC1: A defect is recurring when it appears in >1 calendar week
     AND in >1 lot."""

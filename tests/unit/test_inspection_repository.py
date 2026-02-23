@@ -20,15 +20,13 @@ Note:
     database-engine-specific behaviour.
 """
 
-import pytest
-from datetime import date
 
+import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
-from src.models import Base, Defect, Lot, InspectionRecord
+from src.models import Base
 from src.repositories.inspection_repository import InspectionRepository
-
 
 # ---------------------------------------------------------------------------
 # Fixtures

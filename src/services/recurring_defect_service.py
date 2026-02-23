@@ -26,15 +26,15 @@ Acceptance Criteria mapping:
 """
 
 from collections import defaultdict
-from datetime import date, timedelta
+from datetime import date
 
 from src.repositories.inspection_repository import InspectionRepository
 from src.schemas import (
     DefectStatus,
-    RecurringDefectRow,
-    WeeklyBreakdownRow,
     InspectionDetail,
     MissingPeriod,
+    RecurringDefectRow,
+    WeeklyBreakdownRow,
 )
 
 

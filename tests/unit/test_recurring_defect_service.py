@@ -27,14 +27,14 @@ Acceptance Criteria covered:
     AC9 — Default sort order
 """
 
-import pytest
 from datetime import date
 from unittest.mock import MagicMock
 
-from src.schemas import DefectStatus, RecurringDefectRow
-from src.services.recurring_defect_service import RecurringDefectService
-from src.models import InspectionRecord, Lot, Defect
+import pytest
 
+from src.models import Defect, InspectionRecord, Lot
+from src.schemas import DefectStatus
+from src.services.recurring_defect_service import RecurringDefectService
 
 # ---------------------------------------------------------------------------
 # Fixtures — reusable test setup

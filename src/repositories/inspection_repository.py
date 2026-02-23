@@ -18,6 +18,7 @@ The service layer is responsible for converting these into DTOs.
 """
 
 from datetime import date
+
 from sqlalchemy.orm import Session
 
 from src.models import InspectionRecord

@@ -18,7 +18,8 @@ See also:
 """
 
 from datetime import date, datetime
-from sqlalchemy import String, Integer, Boolean, Date, ForeignKey
+
+from sqlalchemy import Boolean, Date, ForeignKey, Integer, String
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 

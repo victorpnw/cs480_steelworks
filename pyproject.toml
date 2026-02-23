@@ -32,6 +32,7 @@ psycopg2-binary = "^2.9"
 streamlit = "^1.40"
 ruff = "^0.15.2"
 mypy = "^1.19.1"
+pytest-cov = "^7.0.0"
 
 [tool.poetry.group.dev.dependencies]
 

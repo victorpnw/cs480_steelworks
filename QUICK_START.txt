@@ -1,0 +1,146 @@
+"""
+QUICK START GUIDE - SteelWorks Recurring Defects Analysis Tool
+
+Get up and running in 5 minutes!
+
+===================================================================
+STEP 1: PREREQUISITES (2 minutes)
+===================================================================
+
+Ensure you have:
+✓ Python 3.9+ installed
+  Check: python --version
+
+✓ PostgreSQL 12+ installed and running
+  Check: psql --version
+  
+  Or use Docker:
+  docker run -d -e POSTGRES_PASSWORD=postgres -p 5432:5432 --name pgdb postgres:latest
+
+===================================================================
+STEP 2: SET UP DATABASE (1 minute)
+===================================================================
+
+1. Create the database:
+   psql -U postgres -c "CREATE DATABASE steelworks;"
+
+2. Create .env file in project root:
+   cp .env.example .env
+
+3. Edit .env and set:
+   DATABASE_URL=postgresql://postgres:postgres@localhost:5432/steelworks
+
+===================================================================
+STEP 3: INSTALL PROJECT DEPENDENCIES (1 minute)
+===================================================================
+
+cd cs480_steelworks
+poetry install
+
+===================================================================
+STEP 4: INITIALIZE DATABASE SCHEMA (30 seconds)
+===================================================================
+
+poetry run python main.py --init-db
+
+Expected output:
+  Initializing database schema...
+  ✓ Database initialized successfully!
+  ✓ All tables created.
+
+===================================================================
+STEP 5: RUN THE APPLICATION (30 seconds)
+===================================================================
+
+poetry run streamlit run src/ui/app.py
+
+Wait for output like:
+  You can now view your Streamlit app in your browser.
+  Local URL: http://localhost:8501
+
+Open http://localhost:8501 in your browser!
+
+===================================================================
+USING THE APPLICATION
+===================================================================
+
+1. Set Date Range
+   - Use the date pickers at the top to select analysis period
+   - Default: Last 12 weeks
+
+2. View Recurring Defects
+   - Table shows all defects in your date range
+   - Color-coded by status (yellow = recurring)
+   - Sorted by AC9 criteria (Recurring first)
+
+3. Filter by Status
+   - Select from dropdown: All, Recurring, Not recurring, Insufficient data
+   - Only selected status defects will be shown
+
+4. Drill Down into Details
+   - Select a defect code from the dropdown
+   - See weekly breakdown
+   - View all underlying inspection records
+   - Check for data gaps
+
+===================================================================
+RUNNING TESTS
+===================================================================
+
+Run all tests:
+  poetry run pytest tests/ -v --cov=src
+
+Run specific test:
+  poetry run pytest tests/test_recurring_defects.py::TestAC1_MultiWeekRecurring -v
+
+Check coverage:
+  poetry run pytest tests/ --cov=src --cov-report=html
+  open htmlcov/index.html
+
+===================================================================
+LOADING SAMPLE DATA (OPTIONAL)
+===================================================================
+
+If you want to populate the database with sample data:
+
+poetry run python -m data.load_sample_data
+
+Then refresh the Streamlit app to see the data!
+
+===================================================================
+NEXT STEPS WITH YOUR DATA
+===================================================================
+
+1. Export your inspection data from Excel/ERP to CSV format
+2. Load it into the database using any CSV import tool
+3. Use the Streamlit app to analyze recurring defects
+4. Drill down into specific defects for detailed investigation
+
+===================================================================
+NEED HELP?
+===================================================================
+
+Connection Issues?
+  - Check: psql -U postgres -c "SELECT 1"
+  - Verify .env DATABASE_URL is correct
+  - Ensure PostgreSQL is running
+
+Import Errors?
+  - Run: poetry run pytest tests/ -v
+  - Check error messages in test output
+  - Verify poetry.lock was properly updated with poetry install
+
+Streamlit Not Starting?
+  - Try different port: poetry run streamlit run src/ui/app.py --server.port 8502
+  - Check error messages in terminal
+  - Verify PostgreSQL connection working first
+
+===================================================================
+
+For detailed documentation, see:
+  - README_NEW.md: Complete project documentation
+  - IMPLEMENTATION_SUMMARY.txt: Technical implementation details
+  - Individual source files: Comprehensive code comments
+
+Happy analyzing! 🏭
+"""

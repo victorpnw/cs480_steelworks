@@ -13,7 +13,8 @@
 #   3. runs the selected hook IDs
 #
 # When you run:
-#     pre-commit install
+#   poetry run pre-commit install
+
 #
 # pre-commit installs a Git hook inside:
 #     .git/hooks/pre-commit
@@ -36,7 +37,8 @@ repos:
     #
     # Similar idea to version pinning in requirements.txt.
     #
-    rev: v0.15.2
+    rev: v0.13.0
+
 
     # "hooks" selects which hook definitions from that
     # repository we want to use.
@@ -47,7 +49,6 @@ repos:
       - id: ruff-format
       - id: ruff-check
         args: [--fix]
-      
 
     # Important:
     # ----------
@@ -63,7 +64,8 @@ repos:
   # Another Remote Hook Provider
   # ==========================================================
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.19.1
+    rev: v1.18.1
+
     hooks:
       - id: mypy
 
@@ -92,8 +94,7 @@ repos:
         # "id" must be unique within this config file.
         #
         # It is simply an internal identifier used
-        # by pre-commit to track the hook
-        #
+        # by pre-commit to track the hook.
         name: run pytest (all tests must pass)
 
         # language determines how the hook runs.
@@ -108,7 +109,7 @@ repos:
         #
         # Pre-commit literally runs this string.
         #
-        entry: poetry run pytest -q --maxfail=1 --disable-warnings
+        entry: pytest -q --maxfail=1 --disable-warnings
 
         # Explanation of execution behavior:
         #

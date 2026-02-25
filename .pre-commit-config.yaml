@@ -93,7 +93,6 @@ repos:
         #
         # It is simply an internal identifier used
         # by pre-commit to track the hook
-        # to demo main protect.
         #
         name: run pytest (all tests must pass)
 

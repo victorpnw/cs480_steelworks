@@ -1,0 +1,11 @@
+"""
+Repositories Module
+
+Exports the repository classes for data access.
+"""
+
+__all__ = [
+    "InspectionRecordRepository",
+    "DefectRepository",
+    "LotRepository",
+]

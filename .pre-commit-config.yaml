@@ -92,7 +92,7 @@ repos:
         # "id" must be unique within this config file.
         #
         # It is simply an internal identifier used
-        # by pre-commit to track the hook.
+        # by pre-commit to track the hook
         #
         name: run pytest (all tests must pass)
 

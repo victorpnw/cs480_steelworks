@@ -185,7 +185,7 @@ jobs:
       # ------------------------------------------------------
       - name: Install dependencies
         # --no-interaction prevents prompts in CI
-        run: poetry install --no-interaction
+        run: poetry install --no-interaction --no-root
 
 
       # ------------------------------------------------------
